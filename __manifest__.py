@@ -9,14 +9,15 @@
         Odoo REST API
     """,
 
-    'author': "Yezileli Ilomo",
-    'website': "https://github.com/yezyilomo/odoo-rest-api",
+    'author': "easonwu",
+    'website': "https://github.com/easonwy/odoo-rest-api",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
+    # Check https://github.com/odoo/odoo/blob/17.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'developers',
-    'version': '0.1',
+    'category': 'Technical',
+    'version': '0.2',
+    'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],

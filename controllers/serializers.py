@@ -76,8 +76,8 @@ class Serializer(object):
         if field_type in ['one2many', 'many2many']:
             return {
                 field_name: [
-                    cls.serialize(record, nested_parsed_query)
-                    for record
+                    cls.serialize(record, nested_parsed_query) 
+                    for record 
                     in rec[field_name]
                 ]
             }
@@ -93,9 +93,9 @@ class Serializer(object):
     @classmethod
     def serialize(cls, rec, parsed_query):
         data = {}
-
-        # NOTE: self.parsed_restql_query["include"] not being empty
-        # is not a guarantee that the exclude operator(-) has not been
+    
+        # NOTE: self.parsed_restql_query["include"] not being empty 
+        # is not a guarantee that the exclude operator(-) has not been 
         # used because the same self.parsed_restql_query["include"]
         # is used to store nested fields when the exclude operator(-) is used
         if parsed_query["exclude"]:
@@ -106,17 +106,17 @@ class Serializer(object):
                     continue
                 for nested_field, nested_parsed_query in field.items():
                     built_nested_field = cls.build_nested_field(
-                        rec,
-                        nested_field,
+                        rec, 
+                        nested_field, 
                         nested_parsed_query
                     )
                     data.update(built_nested_field)
-
+    
             flat_fields= set(all_fields).symmetric_difference(set(parsed_query['exclude']))
             for field in flat_fields:
                 flat_field = cls.build_flat_field(rec, field)
                 data.update(flat_field)
-
+    
         elif parsed_query["include"]:
             # Here we are sure that self.parsed_restql_query["exclude"]
             # is empty which means the exclude operator(-) is not used,
@@ -126,7 +126,7 @@ class Serializer(object):
             if "*" in parsed_query['include']:
                 # Include all fields
                 parsed_query['include'] = filter(
-                    lambda item: item != "*",
+                    lambda item: item != "*", 
                     parsed_query['include']
                 )
                 fields = chain(parsed_query['include'], all_fields)
@@ -136,8 +136,8 @@ class Serializer(object):
                 if isinstance(field, dict):
                     for nested_field, nested_parsed_query in field.items():
                         built_nested_field = cls.build_nested_field(
-                            rec,
-                            nested_field,
+                            rec, 
+                            nested_field, 
                             nested_parsed_query
                         )
                         data.update(built_nested_field)

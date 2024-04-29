@@ -54,6 +54,9 @@ class OdooAPI(http.Controller):
 
         http.request.session.authenticate(db, login, password)
         res = request.env['ir.http'].session_info()
+        res['session_id'] = request.session.sid
+        res['csrf_token'] = request.csrf_token()
+
         return res
 
     @http.route(
