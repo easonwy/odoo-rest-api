@@ -17,7 +17,7 @@
     # for the full list
     'category': 'Technical',
     'version': '0.2',
-    'license': 'LGPL-3',
+    'license': 'MIT',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
