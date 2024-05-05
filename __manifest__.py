@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Odoo REST API",
+    'name': "Odoo Rest API",
 
     'summary': """
         Odoo REST API""",
@@ -9,7 +9,7 @@
         Odoo REST API
     """,
 
-    'author': "easonwu",
+    'author': "tapas",
     'website': "https://github.com/easonwy/odoo-rest-api",
 
     # Categories can be used to filter modules in modules listing
@@ -17,7 +17,7 @@
     # for the full list
     'category': 'Technical',
     'version': '0.2',
-    'license': 'MIT',
+    'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
