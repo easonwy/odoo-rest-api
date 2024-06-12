@@ -120,10 +120,10 @@ class OdooAPI(http.Controller):
         next_page = None
         total_page_number = 1
         current_page = 1
+        count = len(records)
 
         if "page_size" in params:
             page_size = int(params["page_size"])
-            count = len(records)
             total_page_number = math.ceil(count/page_size)
 
             if "page" in params:
@@ -156,7 +156,7 @@ class OdooAPI(http.Controller):
             )
 
         res = {
-            "count": len(records),
+            "count": count,
             "prev": prev_page,
             "current": current_page,
             "next": next_page,

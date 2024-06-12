@@ -6,6 +6,11 @@ This is a module which expose Odoo as a REST API
 * Download this module and put it to your Odoo addons directory
 * Install requirements with `pip install -r requirements.txt`
 
+## Change History
+
+### 2024-06-06
+* fixed the bug where returning wrong total record count value for field count when paging query.
+
 ## Getting Started
 
 ### Authenticating users
